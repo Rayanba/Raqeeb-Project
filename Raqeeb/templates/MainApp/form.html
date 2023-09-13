@@ -1,0 +1,69 @@
+{% extends 'MainApp/head.html' %}
+{% load static %}
+
+{% block title %}
+    <title>الصفحة الرئيسية</title>
+{% endblock title %}
+
+{% block content %}
+
+    {% comment %} navbar {% endcomment %}
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container ">
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-3 my-5 rounded" id="page">
+                <a class="nav-link fs-4 " href="{% url 'upload' %}" >تقرير الحادث</a>
+          </li>
+          <li class="nav-item mx-3 3 my-5">
+                <a class="nav-link fs-4 " href="{% url 'dashboard' %}">لوحة البيانات</a>
+          </li>
+          <li class="nav-item mx-3 3 my-5">
+                <a class="nav-link fs-4 " aria-current="page" href="{% url 'main' %}">الرئيسية</a>
+          </li>
+        </ul>
+        <div class="my-5 logo " >
+          <img src="{% static 'images/logo1.png' %}" alt="Logo" width="250" height="110" class"" >
+        </div>
+      </div>
+    </div>
+</nav>
+
+    {% comment %} form {% endcomment %}
+    <div class="container shadow rounded-5 py-5">
+        <form method = 'POST'>
+            {% csrf_token %}
+            {% if form.errors %}
+                {% for message in form.errors %}
+                    <div class="alert alert-danger">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div class="mb-3 text-end  mx-5">
+                <label for="firstPerson" class="form-label fs-5">أقوال الطرف الأول</label>
+                <input type="text" class="form-control text-end " id="firstPerson" name="firstPerson" required>
+            </div>
+            <div class="mb-3 text-end mx-5">
+                <label for="secondPerson" class="form-label fs-5">أقوال الطرف الثاني</label>
+                <input type="text" class="form-control text-end " id="secondPerson" name="secondPerson" required>
+            </div>
+            <div class="mb-3 text-end mx-5">
+            <label for="videoFile" class="form-label fs-5">فيديو الحادث</label>
+            <select class="form-control" name="file" id="file">
+                {% for file_name in file_names %}
+                <option value="{{ file_name }}">{{ file_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+            {% comment %} <div class="mb-4 text-end mx-5">
+                <label for="videoFile" class="form-label fs-5">فيديو الحادث</label>
+                <input class="form-control" type="file" id="videoFile" name="videoFile" required>
+            </div> {% endcomment %}
+            <div class="text-center">
+            <button type="submit" class="btn" style="background-color: #202F70; color: #ffffff;">إرسال</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock content %}

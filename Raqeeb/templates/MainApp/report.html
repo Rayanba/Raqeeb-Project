@@ -1,0 +1,86 @@
+{% extends 'MainApp/head.html' %}
+{% load static %}
+
+{% block title %}
+    <title>الصفحة الرئيسية</title>
+{% endblock title %}
+
+{% block content %}
+
+   {% comment %} navbar {% endcomment %}
+   <nav class="navbar navbar-expand-lg ">
+    <div class="container ">
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-3 my-5 rounded" id="page">
+                <a class="nav-link fs-4 " href="{% url 'upload' %}" >تقرير الحادث</a>
+          </li>
+          <li class="nav-item mx-3 3 my-5">
+                <a class="nav-link fs-4 " href="{% url 'dashboard' %}">لوحة البيانات</a>
+          </li>
+          <li class="nav-item mx-3 3 my-5">
+                <a class="nav-link fs-4 " aria-current="page" href="{% url 'main' %}">الرئيسية</a>
+          </li>
+        </ul>
+        <div class="my-5 logo " >
+          <img src="{% static 'images/logo1.png' %}" alt="Logo" width="250" height="110" class"" >
+        </div>
+      </div>
+    </div>
+</nav>
+
+    {% comment %} form {% endcomment %}
+    <div class="container shadow rounded-5 py-5 report">
+        <form method = 'POST'>
+            {% csrf_token %}
+            {% if form.errors %}
+                {% for message in form.errors %}
+                    <div class="alert alert-danger">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div class=" mb-5 text-center  mx-5">
+                <h2>تقرير الحادث المروري</h2>
+            </div>
+            {% comment %} <div class="text-end  mx-5">
+                <h4>: توضح بيانات الحادث المدخلة أن </h4>
+            </div> {% endcomment %}
+            <div class="my-5 mx-5 fs-5">
+                <h3><span>نسبة الخطأ</span></h3>
+            </div>
+            <div class="text-end  mx-5">
+                <p for="firstPerson" class="fs-2"> : الطرف الأول</p>
+                <p class="fs-2" >{{first_person_rate}}%</p>
+            </div>
+            <div class="text-end mx-5">
+                <p for="secondPerson" class="fs-2"> : الطرف الثاني</p>
+                <p class="fs-2">{{second_person_rate}}%</p>
+            </div>
+            <div class="my-5 mx-5 fs-2">
+                <h3><span>أقوال الطرفين</span></h3>
+            </div>
+            <div class="text-end  mx-5">
+                <p for="firstPerson" class="fs-2"> : الطرف الأول</p>
+                <p class="fs-2">{{first_person}}</p>
+            </div>
+            <div class="text-end mx-5">
+                <p for="secondPerson" class="fs-2"> : الطرف الثاني</p>
+                <p class="fs-2">{{second_person}}</p>
+            </div>
+            <div class="my-5 mx-5 fs-5">
+                <h3><span>الكــروكي</span></h3>
+            </div>
+            <div class="my-5 mx-5 fs-5" style="align-items: center">
+                {% if gif == 0 %}
+                    <img src="{% static 'images/gif0.gif' %}" alt="case0"  >
+                    {% elif gif == 1 %}
+                    <img src="{% static 'images/gif1.gif' %}" alt="case1"   >
+                    {% else %}
+                    <img src="{% static 'images/gif2.gif' %}" alt="case2"  >
+                {% endif %}
+            </div>
+
+        </form>
+    </div>
+{% endblock content %}

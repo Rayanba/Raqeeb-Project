@@ -1,0 +1,42 @@
+{% extends 'MainApp/head.html' %}
+{% load static %}
+
+{% block title %}
+    <title>الصفحة الرئيسية</title>
+{% endblock title %}
+
+{% block content %}
+
+  {% comment %} navbar {% endcomment %}
+  <nav class="navbar navbar-expand-lg ">
+      <div class="container ">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item mx-3 my-5 ">
+                  <a class="nav-link fs-4 " href="{% url 'upload' %}" >تقرير الحادث</a>
+            </li>
+            <li class="nav-item mx-3 3 my-5">
+                  <a class="nav-link fs-4 " href="{% url 'dashboard' %}">لوحة البيانات</a>
+            </li>
+            <li class="nav-item mx-3 3 my-5 rounded" id="page">
+                  <a class="nav-link fs-4 " aria-current="page" href="{% url 'main' %}">الرئيسية</a>
+            </li>
+          </ul>
+          <div class="my-5 logo " >
+            <img src="{% static 'images/logo1.png' %}" alt="Logo" width="250" height="110" class"" >
+          </div>
+        </div>
+      </div>
+  </nav>
+
+  {% comment %}  Body {% endcomment %}
+  <div class=" main "> 
+    <div class="container-fluid my-4 rectangle">
+      <h1 class='text-end ar-name'>رقـيب معاك بكل طريق</h1>
+      <h1 class='text-end en-name'>Raqib Dashcam</h1>
+    <h1 class='text-start fs-5 img-txt'>الخطأ على مين ؟</h1>
+    </div>
+    <img src="{% static 'images/car.png' %}" class="float-start " >
+  </div>
+
+{% endblock content %}

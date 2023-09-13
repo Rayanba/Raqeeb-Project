@@ -1,0 +1,16 @@
+scipy
+pycuda
+onnx
+onnxruntime
+opencv-python
+torch
+tqdm
+tensorboard
+torchvision
+addict
+pathspec
+imagesize
+ujson
+scikit-learn
+cap-from-youtube
+# pytorch

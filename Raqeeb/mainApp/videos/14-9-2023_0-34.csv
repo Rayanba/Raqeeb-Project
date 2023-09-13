@@ -1,0 +1,2 @@
+offset,xmin,ymin,xmax,ymax,car_direction,car_curv,x_lane_Two_firstPoint,y_lane_Two_firstPoint,x_lane_Two_midPoint,y_lane_Two_midPoint,x_lane_Two_lastPoint,y_lane_Two_lastPoint,x_lane_Three_firstPoint,y_lane_Three_firstPoint,x_lane_Three_midPoint,y_lane_Three_midPoint,x_lane_Three_lastPoint,y_lane_Three_lastPoint
+415,388,69,69,299,32,332,201,395,430,422,431,400,231,381,218,251,248,181
