@@ -1,7 +1,12 @@
-## Team Members
-| Arwa Al namlan | Hajar Al Amer | Hussain Al Zawad | Rayan Baghdadi | Sadeem Fihrah|
-|-|-|-|-|-|
+## Team Members & Duties
 
+| Member Names      | Tasks                                                  
+|:-------------------|--------------------------------------------------------------|
+| Arwa Al-Namlan    | Dashboard - Website building - Model deployment |
+| Hajar Al-Amer     | Machine learning - Data cleaning - Readme - Presentation |
+| Hussain Al-Zawad  | Requirements - Readme - Presentation - detection data gathering - Accidents data - Kroky | 
+| Rayan Baghdadi    | Detection models data gathering - Data Cleaning - Recording Accident Scene - data generation - Model deployment - Video montage |  
+| Sadeem Fihrah     | Dashboard - Machine learning - Presentation |
 
 # Introduction 
 🚦 Traffic congestion is a pressing concern in many major cities, mainly caused by minor accidents which inevitably lead to more accidents. These accidents, though often minor in nature, contribute to increased congestion. Our pioneering solution "Raqeeb" (رقيب) is designed to alleviate traffic stemming from these accidents and, more crucially, mitigate the risk of subsequent incidents involving pedestrians. Ultimately, our approach results in reduced traffic congestion, decreased hazards, and quicker resolution of occurring accidents. Additionally, our system incorporates drowsiness detection to address driver fatigue-related accidents. 
