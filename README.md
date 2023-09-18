@@ -67,7 +67,7 @@
 
 ## **Models** 📊
 
-![Alt Text](newplot.png)
+<img src="pic/2.png">
 
 For this project, we selected XGBoost as our primary model due to its excellent performance in handling structured data. After training and evaluating the model on our dataset, we achieved an impressive accuracy of 98%.
 
